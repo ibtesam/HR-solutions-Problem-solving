@@ -1,18 +1,12 @@
 // HACKER RANK BEAUTIFUL DAYS AT THE MOVIES.
 
 #include <iostream>
-#include <vector>
 using namespace std;
 
 int beautifulDays(int i, int j, int k) {
-    vector<int> tempArr;
     int reverse = 0, count = 0;
     for (int a = i; a <= j; a++) {
-        tempArr.push_back(a);
-    }
-
-    for (int b : tempArr) {
-        int temp = b;
+        int temp = a;
         while (temp > 0) {
             reverse = (reverse * 10) + (temp % 10);
             temp = temp / 10;
@@ -22,14 +16,13 @@ int beautifulDays(int i, int j, int k) {
        
         cout << reverse << endl;
         
-        float c = b;
-        if (abs(c - fltReverse) / k == abs(b - reverse) / k) {
+        float c = a;
+        if (abs(c - fltReverse) / k == abs(a - reverse) / k) {
             count++;
         }
         reverse = 0;
     }
     return count;
-
 }
 
 int main(){
